@@ -14,8 +14,11 @@ import fastifyReverseRoutes from 'fastify-reverse-routes';
 import fastifyMethodOverride from 'fastify-method-override';
 import Pug from 'pug';
 import i18next from 'i18next';
+import Rollbar from 'rollbar';
+
 import ru from './locales/ru.js';
 import webpackConfig from '../webpack.config.js';
+
 
 import ormconfig from '../ormconfig.js';
 import addRoutes from './routes/index.js';
@@ -109,6 +112,18 @@ const registerPlugins = (app) => {
     });
 };
 
+const handleErrors = (app) => {
+  const rollbar = new Rollbar({
+    accessToken: '6cffd5c49a50431eb377efded7db2795',
+    captureUncaught: true,
+    captureUnhandledRejections: true
+  });
+  app.setErrorHandler((error, request, reply) => {
+    rollbar.log(error);
+  })
+}
+
+
 export default () => {
   const app = fastify({
     logger: {
@@ -125,6 +140,7 @@ export default () => {
   setUpStaticAssets(app);
   addRoutes(app);
   addHooks(app);
+  handleErrors(app);
 
   return app;
 };

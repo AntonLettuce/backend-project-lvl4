@@ -1,7 +1,7 @@
 {
-   "name": "fastify-nodejs-application",
+   "name": "task-manager",
    "version": "0.1.0",
-   "description": "fastify-nodejs-application",
+   "description": "Simple task manager web application",
    "main": "",
    "scripts": {
       "test": "jest",
@@ -12,7 +12,7 @@
       "start": "NODE_ENV=production node dist/server/bin/server.js",
       "develop": "npx nodemon --exec DEBUG=application:* npx babel-node server/bin/server.js"
    },
-   "author": "Stanislav Dzisiak",
+   "author": "Anton Kapustin",
    "license": "ISC",
    "repository": {
       "type": "git",
@@ -47,6 +47,7 @@
       "point-of-view": "^3.8.0",
       "pug": "^2.0.4",
       "reflect-metadata": "^0.1.13",
+      "rollbar": "^2.16.1",
       "sql.js": "^1.2.2",
       "sqlite3": "^4.2.0",
       "typeorm": "0.2.24",
