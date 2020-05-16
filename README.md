@@ -1,11 +1,12 @@
-# fastify-nodejs-application
+# Task Manager
 
 [![Node CI](https://github.com/hexlet-boilerplates/fastify-nodejs-application/workflows/Node%20CI/badge.svg)](https://github.com/hexlet-boilerplates/fastify-nodejs-application/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/dc75c6c840e72447a20c/maintainability)](https://codeclimate.com/github/AntonLettuce/backend-project-lvl4/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/dc75c6c840e72447a20c/test_coverage)](https://codeclimate.com/github/AntonLettuce/backend-project-lvl4/test_coverage)
 
-[![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/hexletguides.github.io/master/images/hexlet_logo128.png)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=koa-nodejs-application)
+## Try yourself
 
-This repository is created and maintained by the team and the community of Hexlet, an educational project. [Read more about Hexlet (in Russian)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=koa-nodejs-application).
-
+[App on heroku](https://kapustin-task-manager.herokuapp.com/users)
 ## Setup
 
 ```sh

@@ -112,17 +112,6 @@ const registerPlugins = (app) => {
     });
 };
 
-const handleErrors = (app) => {
-  const rollbar = new Rollbar({
-    accessToken: '6cffd5c49a50431eb377efded7db2795',
-    captureUncaught: true,
-    captureUnhandledRejections: true
-  });
-  app.setErrorHandler((error, request, reply) => {
-    rollbar.log(error);
-  })
-}
-
 
 export default () => {
   const app = fastify({
@@ -132,7 +121,6 @@ export default () => {
       base: null,
     },
   });
-
   registerPlugins(app);
 
   setupLocalization();
@@ -140,7 +128,16 @@ export default () => {
   setUpStaticAssets(app);
   addRoutes(app);
   addHooks(app);
-  handleErrors(app);
+
+  const rollbar = new Rollbar({
+    accessToken: '6cffd5c49a50431eb377efded7db2795',
+    captureUncaught: true,
+    captureUnhandledRejections: true
+  });
+
+  app.setErrorHandler((error, request, reply) => {
+    rollbar.log(error);
+  })
 
   return app;
 };
