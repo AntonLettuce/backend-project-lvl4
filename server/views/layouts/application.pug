@@ -1,13 +1,13 @@
 include ../mixins/forms.pug
 
 doctype html
-html(lang="en").h-100
+html(lang="ru").h-100
   head
-    title Hexlet Fastify Boilerplate
+    title Task Manager
     script(src=assetPath('main.js'))
     link(href=assetPath('main.css'))
   body.h-100.d-flex.flex-column
-    nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-3
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       a.navbar-brand(href=route('root'))= t('appName')
       button.navbar-toggler(data-toggle="collapse" data-target="#navbarSupportedContent")
         span.navbar-toggler-icon
@@ -24,17 +24,14 @@ html(lang="en").h-100
               a.nav-link(href=route('newSession'))= t('layouts.application.signIn')
             li.nav-item
               a.nav-link(href=route('newUser'))= t('layouts.application.signUp')
-    .container.h-100
-
+    .container
       each messages, type in reply.flash() || []
         each message in messages
           div.alert(class=`alert-${getAlertClass(type)}`)= message
-
-      h1.my-4
-        block header
-      block content
+      
+    block content
 
     footer.footer.mt-100
       .container.my-5.pt-4.border-top
-        a(target="_blank" href="https://ru.hexlet.io") Hexlet
+        a(target="_blank" href="https://github.com/AntonLettuce") GitHub
 

@@ -2,7 +2,17 @@ extends ../layouts/application.pug
 
 block content
   .jumbotron
-    .display-4= t('views.welcome.index.hello')
-    p.lead= t('views.welcome.index.description')
-    hr
-    a.btn.btn-primary.btn-lg(href="https://hexlet.io")= t('views.welcome.index.more')
+    .container
+      .display-4= t('views.welcome.index.hello')
+      p.lead= t('views.welcome.index.description')
+      if reply.request.signedIn
+        a.btn.btn-primary.btn-lg(href="/session/new")= t('views.welcome.index.more')
+      else
+        a.btn.btn-primary.btn-lg(href="/users/new")= t('views.welcome.index.more')
+  .container.h-100
+    .row
+      - var features = ['Ставьте задачи', 'Назначайте ответственного', 'Контролируйте время'];
+      each feature in features
+        .col-md-4
+          h3= feature
+          p Текст для заполнения объема карточки возможностей Текст для заполнения объема карточки возможностей Текст для заполнения объема карточки возможностей

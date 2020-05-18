@@ -15,6 +15,7 @@ import fastifyMethodOverride from 'fastify-method-override';
 import Pug from 'pug';
 import i18next from 'i18next';
 import Rollbar from 'rollbar';
+import dotenv from 'dotenv';
 
 import ru from './locales/ru.js';
 import webpackConfig from '../webpack.config.js';
@@ -29,6 +30,8 @@ import Guest from './entity/Guest.js';
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = !isProduction;
+
+dotenv.config();
 
 const setUpViews = (app) => {
   const { devServer } = webpackConfig;
@@ -130,7 +133,7 @@ export default () => {
   addHooks(app);
 
   const rollbar = new Rollbar({
-    accessToken: '6cffd5c49a50431eb377efded7db2795',
+    accessToken: process.env.ROLLBAR_TOKEN,
     captureUncaught: true,
     captureUnhandledRejections: true
   });
