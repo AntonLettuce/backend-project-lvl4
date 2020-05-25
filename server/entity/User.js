@@ -17,6 +17,12 @@ class User extends BaseEntity {
   password = '';
 
   @Column('varchar')
+  firstName = '';
+
+  @Column('varchar')
+  lastName = '';
+
+  @Column('varchar')
   @IsNotEmpty()
   passwordDigest = '';
 }

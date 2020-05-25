@@ -1,5 +1,3 @@
-// @ts-check
-
 import i18next from 'i18next';
 import { validate } from 'class-validator';
 import _ from 'lodash';

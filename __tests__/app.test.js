@@ -1,6 +1,5 @@
-// @ts-check
-
 import app from '../server/index.js';
+import faker from 'faker';
 
 describe('requests', () => {
   let server;
@@ -23,6 +22,18 @@ describe('requests', () => {
       url: '/wrong-path',
     });
     expect(res.statusCode).toBe(404);
+  });
+
+  it('User Registration', async () => {
+    const res = await server.inject({
+      method: 'POST',
+      url: '/users',
+      payload: { 
+        email: faker.internet.email(),
+        password: faker.internet.password(),
+      }
+    });
+    expect(res.statusCode).toBe(302);
   });
 
   afterAll(() => {

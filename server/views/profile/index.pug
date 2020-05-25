@@ -1,0 +1,15 @@
+extends ../layouts/application.pug
+
+block content
+  .container.mt-4.p-4.border
+    h1= t('views.profile.index.title')
+    +formFor()(action=route('profile') method='post')
+      +input(user, 'firstName', t('views.users.index.firstName'))(type="text")
+      +input(user, 'lastName', t('views.users.index.lastName'))(type="text")
+      +input(user, 'email', t('views.users.index.email'))(type="text")
+      +input(user, 'password', t('views.users.index.password'))(type="password")
+      .row
+        .col
+          +buttonTo(route('profile'), 'patch')(class='btn btn-primary' value=t('views.profile.index.patch'))
+        .col
+          +buttonTo(route('profile'), 'delete')(class='btn btn-danger float-right' value=t('views.profile.index.delete'))

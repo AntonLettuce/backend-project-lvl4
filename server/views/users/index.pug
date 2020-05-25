@@ -6,12 +6,14 @@ block content
     table.table.table-striped
       thead
         tr
-          th= t('users.id')
-          th= t('users.email')
-          th= t('users.createdAt')
+          th= t('views.users.index.id')
+          th= t('views.users.index.email')
+          th= t('views.users.index.firstName')
+          th= t('views.users.index.lastName')
       tbody
         each user in users
           tr
             td= user.id
             td= user.email
-            td= user.createdAt
+            td= user.firstName
+            td= user.lastName

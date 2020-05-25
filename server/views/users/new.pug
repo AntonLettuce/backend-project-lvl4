@@ -4,6 +4,6 @@ block content
   .container.mt-4.p-4.border
     h1= t('views.users.new.signUp')
     +formFor()(action=route('users') method='post')
-      +input(user, 'email', errors)(type="text")
-      +input(user, 'password', errors)(type="password")
+      +input(user, 'email', t('views.users.index.email'), errors)(type="text")
+      +input(user, 'password', t('views.users.index.password'), errors)(type="password")
       +submit(user)(value=t('views.users.new.submit'))

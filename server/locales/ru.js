@@ -17,10 +17,21 @@ module.exports = {
           success: 'Пользователь успешно зарегистрирован',
         },
       },
+      profile: {
+        update: {
+          success: 'Информация успешно обновлена',
+          error: 'Email и пароль не могут быть пустыми!',
+        },
+        authorization: 'Для просмотра страницы профиля авторизуйтесь!',
+        delete: {
+          success: 'Ваш аккаунт успешно удалён!',
+        }
+      },
     },
     layouts: {
       application: {
         users: 'Пользователи',
+        profile: 'Мой профиль',
         signIn: 'Вход',
         signUp: 'Регистрация',
         signOut: 'Выход',
@@ -38,6 +49,20 @@ module.exports = {
           submit: 'Сохранить',
           signUp: 'Регистрация',
         },
+        index: {
+          id: 'ID',
+          email: 'Email',
+          firstName: 'Имя',
+          lastName: 'Фамилия',
+          password: 'Пароль',
+        }
+      },
+      profile: {
+        index: {
+          title: 'Мой профиль',
+          patch: 'Обновить',
+          delete: 'Удалить аккаунт',
+        }
       },
       welcome: {
         index: {
